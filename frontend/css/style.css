@@ -1,0 +1,239 @@
+/* ── Variables de color ────────────────────────────────────────── */
+:root {
+  --blanco: #ffffff;
+  --gris-claro: #f5f5f5;
+  --gris-medio: #e0e0e0;
+  --gris-texto: #555555;
+  --negro-suave: #222222;
+  --verde-musgo: #4a7c59;
+  --verde-claro: #6b9e7a;
+  --madera: #c4956a;
+}
+
+/* ── Base ──────────────────────────────────────────────────────── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--gris-claro);
+  color: var(--negro-suave);
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 600;
+  color: var(--negro-suave);
+}
+
+a {
+  color: var(--verde-musgo);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--verde-claro);
+}
+
+/* ── Navbar ────────────────────────────────────────────────────── */
+.navbar {
+  background-color: var(--blanco);
+  border-bottom: 2px solid var(--madera);
+  padding: 0.8rem 2rem;
+}
+
+.navbar-brand img {
+  height: 45px;
+  width: auto;
+}
+
+.navbar-nav .nav-link {
+  color: var(--gris-texto) !important;
+  font-weight: 500;
+  margin: 0 0.5rem;
+  transition: color 0.2s;
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--verde-musgo) !important;
+}
+
+.btn-logout {
+  background-color: var(--madera);
+  color: var(--blanco) !important;
+  border-radius: 6px;
+  padding: 0.3rem 1rem;
+}
+
+.btn-logout:hover {
+  background-color: var(--verde-musgo);
+}
+
+/* ── Tarjetas de productos ─────────────────────────────────────── */
+.product-card {
+  background-color: var(--blanco);
+  border: 1px solid var(--gris-medio);
+  border-radius: 10px;
+  overflow: hidden;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.product-card .card-body {
+  padding: 1rem;
+}
+
+.product-card .card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--negro-suave);
+}
+
+.product-card .card-price {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--verde-musgo);
+  margin: 0.5rem 0;
+}
+
+.product-card .card-location {
+  font-size: 0.8rem;
+  color: var(--gris-texto);
+}
+
+.btn-agregar {
+  background-color: var(--verde-musgo);
+  color: var(--blanco);
+  border: none;
+  border-radius: 6px;
+  padding: 0.4rem 1rem;
+  width: 100%;
+  margin-top: 0.5rem;
+  transition: background-color 0.2s;
+}
+
+.btn-agregar:hover {
+  background-color: var(--verde-claro);
+}
+
+/* ── Mapa Leaflet ──────────────────────────────────────────────── */
+#mapa {
+  height: 500px;
+  border-radius: 10px;
+  border: 1px solid var(--gris-medio);
+}
+
+/* ── Footer ────────────────────────────────────────────────────── */
+footer {
+  background-color: var(--blanco);
+  border-top: 2px solid var(--madera);
+  padding: 1.5rem 2rem;
+  text-align: center;
+  color: var(--gris-texto);
+  font-size: 0.85rem;
+  margin-top: 3rem;
+}
+
+footer a {
+  color: var(--verde-musgo);
+  margin: 0 0.5rem;
+  font-size: 1.2rem;
+}
+
+footer a:hover {
+  color: var(--madera);
+}
+
+/* ── Utilidades ────────────────────────────────────────────────── */
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--negro-suave);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--madera);
+}
+
+/* ── Mapa Leaflet ──────────────────────────────────────────────── */
+#mapa {
+  height: 500px;
+  border-radius: 10px;
+  border: 1px solid var(--gris-medio);
+}
+
+/* ── Footer ────────────────────────────────────────────────────── */
+footer {
+  background-color: var(--blanco);
+  border-top: 2px solid var(--madera);
+  padding: 1.5rem 2rem;
+  text-align: center;
+  color: var(--gris-texto);
+  font-size: 0.85rem;
+  margin-top: 3rem;
+}
+
+footer a {
+  color: var(--verde-musgo);
+  margin: 0 0.5rem;
+  font-size: 1.2rem;
+}
+
+footer a:hover {
+  color: var(--madera);
+}
+
+/* ── Utilidades ────────────────────────────────────────────────── */
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--negro-suave);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--madera);
+}
+
+/* ── Hero carrusel ─────────────────────────────────────────────── */
+#hero .carousel-item img {
+  height: 550px;
+  object-fit: cover;
+  filter: brightness(0.7);
+}
+
+#hero .carousel-caption {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  padding: 1.5rem;
+}
+
+#hero .carousel-caption h2,
+#hero .carousel-caption p {
+  color: white !important;
+}

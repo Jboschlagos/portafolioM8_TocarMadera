@@ -23,6 +23,16 @@ export const verifyToken = (req, res, next) => {
 
         // 6. Si es válido, adjunta el user_id al request y continúa
         req.userId = decoded.user_id
+        req.userRole = decoded.role
         next()
     })
+
+}
+// ── Middleware de verificación de rol admin ────────────────────
+export const isAdmin = (req, res, next) => {
+    // Verifica que el usuario autenticado tenga rol admin
+    if (req.userRole !== 'admin') {
+        return res.status(403).json({ error: 'Acceso denegado — se requiere rol admin' })
+    }
+    next()
 }
