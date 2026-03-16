@@ -20,7 +20,7 @@ async function cargarUltimosProductos() {
 
     try {
         // 1. Consulta los productos al backend
-        const res = await fetch('http://localhost:3000/api/products')
+        const res = await fetch(`${API_URL}/api/products`)
         const data = await res.json()
 
         // 2. Toma solo los últimos 4 productos

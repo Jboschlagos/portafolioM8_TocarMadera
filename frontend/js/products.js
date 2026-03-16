@@ -23,7 +23,7 @@ async function cargarProductos() {
 
     try {
         // 1. Consulta los productos al backend
-        const res = await fetch('http://localhost:3000/api/products')
+        const res = await fetch(`${API_URL}/api/products`)
         const data = await res.json()
 
         // 2. Si no hay productos muestra mensaje
@@ -116,7 +116,7 @@ async function agregarAlCarrito() {
     }
 
     try {
-        const res = await fetch('http://localhost:3000/api/cart', {
+        const res = await fetch(`${API_URL}/api/cart`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

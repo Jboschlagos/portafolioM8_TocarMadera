@@ -20,7 +20,7 @@ async function cargarProductos() {
     const select = document.getElementById('selectProducto')
 
     try {
-        const res = await fetch('http://localhost:3000/api/products')
+        const res = await fetch(`${API_URL}/api/products`)
         const data = await res.json()
 
         // Agrega cada producto como opción del select
@@ -75,7 +75,7 @@ async function subirImagen() {
 
         mensaje.innerHTML = `<div class="alert alert-info">Subiendo imagen...</div>`
 
-        const resUpload = await fetch('http://localhost:3000/api/upload', {
+        const resUpload = await fetch(`${API_URL}/api/upload`, {
             method: 'POST',
             headers: { 'Authorization': `Bearer ${token}` },
             body: formData
@@ -89,7 +89,7 @@ async function subirImagen() {
         }
 
         // 3. Vincula la imagen al producto en product_images
-        const resVincular = await fetch('http://localhost:3000/api/products/images', {
+        const resVincular = await fetch(`${API_URL}/api/products/images`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
