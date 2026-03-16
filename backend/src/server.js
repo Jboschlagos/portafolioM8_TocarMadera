@@ -12,7 +12,9 @@ app.use(cors({
     origin: [
         'http://localhost:5500',
         'http://127.0.0.1:5500',
-        'https://portafolio-m8-tocar-madera-5ve26h91o.vercel.app'
+        'https://portafolio-m8-tocar-madera-5ve26h91o.vercel.app',
+        'https://portafolio-m8-tocar-madera-3zfk6pm2u.vercel.app',
+        'https://portafolio-m8-tocar-madera.vercel.app'
     ]
 }))
 // Permite que el servidor entienda JSON en el req.body
