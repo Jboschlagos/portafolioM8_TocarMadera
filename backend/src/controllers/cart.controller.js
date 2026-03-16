@@ -34,10 +34,13 @@ export const getCart = async (req, res) => {
     const result = await pool.query(
         `SELECT 
         cart_items.id,
+        cart_items.product_id,
         cart_items.quantity,
         products.name,
         products.price,
-        products.image_url
+        (SELECT image_url FROM product_images 
+        WHERE product_id = products.id 
+        ORDER BY orden ASC LIMIT 1) AS image_url
     FROM cart_items
     JOIN products ON cart_items.product_id = products.id
     WHERE cart_items.user_id = $1`,

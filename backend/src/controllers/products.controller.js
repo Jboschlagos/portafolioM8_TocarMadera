@@ -3,23 +3,32 @@ import pool from '../config/db.js'
 
 // ── Obtener todos los productos ────────────────────────────────
 export const getProducts = async (req, res) => {
-    // 1. Consulta todos los productos en la DB
-    const result = await pool.query('SELECT * FROM products')
-
-    // 2. Responde 200 OK con la lista de productos
+    const result = await pool.query(`
+    SELECT 
+      p.*,
+      COALESCE(
+        json_agg(
+          json_build_object('id', pi.id, 'url', pi.image_url, 'orden', pi.orden)
+          ORDER BY pi.orden
+        ) FILTER (WHERE pi.id IS NOT NULL),
+        '[]'
+      ) AS imagenes
+    FROM products p
+    LEFT JOIN product_images pi ON p.id = pi.product_id
+    GROUP BY p.id
+    ORDER BY p.id DESC
+  `)
     res.status(200).json({ products: result.rows })
 }
+
 // ── Crear producto (solo admin) ────────────────────────────────
 export const createProduct = async (req, res) => {
-    // 1. Recibe los datos del body
     const { name, description, price, image_url, ciudad, region, lat, lng } = req.body
 
-    // 2. Valida campos obligatorios
     if (!name || !price) {
         return res.status(400).json({ error: 'Nombre y precio son obligatorios' })
     }
 
-    // 3. Inserta el producto en la DB
     const result = await pool.query(
         `INSERT INTO products 
       (name, description, price, image_url, ciudad, region, lat, lng) 
@@ -27,7 +36,20 @@ export const createProduct = async (req, res) => {
      RETURNING *`,
         [name, description, price, image_url, ciudad, region, lat, lng]
     )
-
-    // 4. Responde 201 Created con el producto creado
     res.status(201).json({ product: result.rows[0] })
+}
+
+// ── Vincular imagen a producto ─────────────────────────────────
+export const addProductImage = async (req, res) => {
+    const { productId, imageUrl } = req.body
+
+    if (!productId || !imageUrl) {
+        return res.status(400).json({ error: 'productId e imageUrl son obligatorios' })
+    }
+
+    const result = await pool.query(
+        'INSERT INTO product_images (product_id, image_url) VALUES ($1, $2) RETURNING *',
+        [productId, imageUrl]
+    )
+    res.status(201).json({ image: result.rows[0] })
 }

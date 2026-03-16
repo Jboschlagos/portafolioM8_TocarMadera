@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tocar Madera | Ingresar</title>
+
+    <!-- Bootstrap 5 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Estilos propios -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <!-- ── Navbar ─────────────────────────────────────────────── -->
+    <div id="navbar-container"></div>
+
+    <!-- ── Contenido principal ─────────────────────────────────── -->
+    <main
+      class="min-vh-100 d-flex flex-column justify-content-center align-items-center"
+      style="background-color: var(--gris-claro)"
+    >
+      <!-- Logo y título -->
+      <header class="text-center mb-4">
+        <img
+          src="img/logoSinFondo.png"
+          alt="Tocar Madera"
+          style="height: 80px"
+        />
+        <h1 class="mt-3" style="font-size: 1.8rem">Tocar Madera</h1>
+        <p style="color: var(--gris-texto)">Mercado En Línea Colaborativo</p>
+      </header>
+
+      <!-- Tarjeta de autenticación -->
+      <section
+        class="card shadow-sm"
+        style="width: 100%; max-width: 420px; border-radius: 12px"
+      >
+        <div class="card-body p-4">
+          <!-- Tabs -->
+          <nav>
+            <ul class="nav nav-tabs mb-4" id="authTabs">
+              <li class="nav-item">
+                <button
+                  class="nav-link active"
+                  id="loginTab"
+                  onclick="showTab('login')"
+                >
+                  <i class="bi bi-box-arrow-in-right"></i> Ingresar
+                </button>
+              </li>
+              <li class="nav-item">
+                <button
+                  class="nav-link"
+                  id="registerTab"
+                  onclick="showTab('register')"
+                >
+                  <i class="bi bi-person-plus"></i> Registrarse
+                </button>
+              </li>
+            </ul>
+          </nav>
+
+          <!-- Formulario Login -->
+          <form
+            id="loginForm"
+            onsubmit="
+              event.preventDefault();
+              login();
+            "
+          >
+            <div class="mb-3">
+              <label for="loginEmail" class="form-label">Email</label>
+              <input
+                type="email"
+                id="loginEmail"
+                class="form-control"
+                placeholder="tu@email.cl"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="loginPassword" class="form-label">Contraseña</label>
+              <input
+                type="password"
+                id="loginPassword"
+                class="form-control"
+                placeholder="••••••••"
+                required
+              />
+            </div>
+            <button
+              type="submit"
+              class="btn w-100"
+              style="background-color: var(--verde-musgo); color: white"
+            >
+              <i class="bi bi-box-arrow-in-right"></i> Ingresar
+            </button>
+          </form>
+
+          <!-- Formulario Register -->
+          <form
+            id="registerForm"
+            style="display: none"
+            onsubmit="
+              event.preventDefault();
+              register();
+            "
+          >
+            <div class="mb-3">
+              <label for="regUsername" class="form-label"
+                >Nombre de usuario</label
+              >
+              <input
+                type="text"
+                id="regUsername"
+                class="form-control"
+                placeholder="tu_nombre"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="regEmail" class="form-label">Email</label>
+              <input
+                type="email"
+                id="regEmail"
+                class="form-control"
+                placeholder="tu@email.cl"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="regPassword" class="form-label">Contraseña</label>
+              <input
+                type="password"
+                id="regPassword"
+                class="form-control"
+                placeholder="••••••••"
+                required
+              />
+            </div>
+            <button
+              type="submit"
+              class="btn w-100"
+              style="background-color: var(--madera); color: white"
+            >
+              <i class="bi bi-person-plus"></i> Registrarse
+            </button>
+          </form>
+
+          <!-- Mensaje de resultado -->
+          <output id="authMessage" class="mt-3 d-block"></output>
+        </div>
+      </section>
+    </main>
+
+    <!-- ── Footer ─────────────────────────────────────────────── -->
+    <div id="footer-container"></div>
+
+    <!-- ── Scripts ─────────────────────────────────────────────── -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/auth.js"></script>
+  </body>
+</html>

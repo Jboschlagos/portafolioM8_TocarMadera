@@ -1,26 +1,18 @@
-// ── Navbar dinámico ────────────────────────────────────────────
-function actualizarNavbar() {
-    const token = localStorage.getItem('token')
-
-    // Si hay token — muestra carrito y logout, oculta login
-    if (token) {
-        document.getElementById('cartLink').style.display = 'block'
-        document.getElementById('logoutLink').style.display = 'block'
-        document.getElementById('loginLink').style.display = 'none'
-    }
-}
-
 // ── Logout ─────────────────────────────────────────────────────
 function logout() {
     localStorage.removeItem('token')
     window.location.href = 'index.html'
 }
 
-// ── Al cargar la página ────────────────────────────────────────
-document.addEventListener('DOMContentLoaded', () => {
-    actualizarNavbar()
-    cargarUltimosProductos()
-})
+// ── Navbar dinámico ────────────────────────────────────────────
+function actualizarNavbar() {
+    const token = localStorage.getItem('token')
+    if (token) {
+        document.getElementById('cartLink').style.display = 'block'
+        document.getElementById('logoutLink').style.display = 'block'
+        document.getElementById('loginLink').style.display = 'none'
+    }
+}
 
 // ── Cargar últimos productos ───────────────────────────────────
 async function cargarUltimosProductos() {
@@ -42,24 +34,35 @@ async function cargarUltimosProductos() {
 
         // 4. Renderiza las tarjetas
         contenedor.innerHTML = ultimos.map(producto => `
-        <div class="col-12 col-sm-6 col-lg-3">
+      <div class="col-12 col-sm-6 col-lg-3">
         <article class="product-card">
-            <img src="${producto.image_url || 'img/logoSinFondo.png'}" 
-            alt="${producto.name}">
-            <div class="card-body">
+          <img src="${producto.imagenes && producto.imagenes.length > 0
+                ? producto.imagenes[0].url
+                : 'img/logoSinFondo.png'}"
+               alt="${producto.name}">
+          <div class="card-body">
             <h3 class="card-title">${producto.name}</h3>
             <p class="card-price">$${Number(producto.price).toLocaleString('es-CL')}</p>
             <p class="card-location">
-                <i class="bi bi-geo-alt"></i> 
-                ${producto.ciudad || ''}, ${producto.region || ''}
+              <i class="bi bi-geo-alt"></i>
+              ${producto.ciudad || ''}, ${producto.region || ''}
             </p>
             <a href="products.html" class="btn-agregar">Ver productos</a>
-            </div>
+          </div>
         </article>
-        </div>
+      </div>
     `).join('')
 
     } catch (error) {
         contenedor.innerHTML = `<p style="color: var(--gris-texto);">Error cargando productos.</p>`
     }
 }
+
+// ── Al cargar la página ────────────────────────────────────────
+// Espera 300ms para que components.js cargue el navbar primero
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+        actualizarNavbar()
+    }, 300)
+    cargarUltimosProductos()
+})
