@@ -1,311 +1,122 @@
 <!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tocar Madera | Mercado En Línea Colaborativo</title>
 
-    <!-- Bootstrap 5 -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <!-- Bootstrap Icons -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
-      rel="stylesheet"
-    />
-    <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Estilos propios -->
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tocar Madera | Mercado En Línea Colaborativo</title>
 
-  <body>
-    <!-- ── Navbar ─────────────────────────────────────────────── -->
-    <div id="navbar-container"></div>
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Estilos propios -->
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- Estilos Historias -->
+  <link rel="stylesheet" href="css/historias.css" />
+</head>
 
-    <!-- ── Hero: Carrusel ──────────────────────────────────────── -->
-    <main>
-      <section id="hero">
-        <div id="carruselHero" class="carousel slide" data-bs-ride="carousel">
-          <!-- Indicadores -->
-          <div class="carousel-indicators">
-            <button
-              type="button"
-              data-bs-target="#carruselHero"
-              data-bs-slide-to="0"
-              class="active"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#carruselHero"
-              data-bs-slide-to="1"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#carruselHero"
-              data-bs-slide-to="2"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#carruselHero"
-              data-bs-slide-to="3"
-            ></button>
-          </div>
+<body>
+  <!-- ── Navbar ─────────────────────────────────────────────── -->
+  <div id="navbar-container"></div>
 
-          <!-- Imágenes -->
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img
-                src="img/tallerCarpinteria.jpg"
-                class="d-block w-100"
-                alt="Taller de carpintería"
-              />
-              <div class="carousel-caption">
-                <h2>El real valor del trabajo en madera</h2>
-                <p>
-                  Conectamos artesanos con personas que valoran lo auténtico
-                </p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img
-                src="img/texturaMadera.jpg"
-                class="d-block w-100"
-                alt="Textura de madera"
-              />
-              <div class="carousel-caption">
-                <h2>Madera que cuenta historias</h2>
-                <p>Cada pieza es única, cada artesano tiene su sello</p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img
-                src="img/trabajoManual.jpg"
-                class="d-block w-100"
-                alt="Trabajo manual"
-              />
-              <div class="carousel-caption">
-                <h2>El valor del trabajo manual</h2>
-                <p>Piezas que duran generaciones</p>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img
-                src="img/womenCarpenter.jpg"
-                class="d-block w-100"
-                alt="Artesana"
-              />
-              <div class="carousel-caption">
-                <h2>Artesanas y artesanos de Chile</h2>
-                <p>Desde distintos rincones del país</p>
-              </div>
+  <!-- ── Hero: Carrusel ──────────────────────────────────────── -->
+  <main>
+    <section id="hero">
+      <div id="carruselHero" class="carousel slide" data-bs-ride="carousel">
+        <!-- Indicadores -->
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carruselHero" data-bs-slide-to="0" class="active"></button>
+          <button type="button" data-bs-target="#carruselHero" data-bs-slide-to="1"></button>
+          <button type="button" data-bs-target="#carruselHero" data-bs-slide-to="2"></button>
+          <button type="button" data-bs-target="#carruselHero" data-bs-slide-to="3"></button>
+        </div>
+
+        <!-- Imágenes -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="img/tallerCarpinteria.jpg" class="d-block w-100" alt="Taller de carpintería" />
+            <div class="carousel-caption">
+              <h2>El real valor del trabajo en madera</h2>
+              <p>
+                Conectamos artesanos con personas que valoran lo auténtico
+              </p>
             </div>
           </div>
-
-          <!-- Controles -->
-          <button
-            class="carousel-control-prev"
-            type="button"
-            data-bs-target="#carruselHero"
-            data-bs-slide="prev"
-          >
-            <span class="carousel-control-prev-icon"></span>
-          </button>
-          <button
-            class="carousel-control-next"
-            type="button"
-            data-bs-target="#carruselHero"
-            data-bs-slide="next"
-          >
-            <span class="carousel-control-next-icon"></span>
-          </button>
-        </div>
-      </section>
-
-      <!-- ── Historias ─────────────────────────────── -->
-      <section
-        class="page-container"
-        style="background-color: var(--blanco); padding: 2rem"
-      >
-        <h2 class="section-title">
-          <i class="bi bi-camera-video"></i> Historias
-        </h2>
-        <div id="noticias" class="row g-3">
-          <div id="noticias" class="row g-3">
-            <!-- Noticia 1 -->
-            <article class="col-12 col-md-6 col-lg-4">
-              <section
-                class="card shadow-sm h-100"
-                style="border-radius: 10px; border: 1px solid var(--gris-medio)"
-              >
-                <div class="card-body p-4">
-                  <span
-                    style="
-                      font-size: 0.75rem;
-                      color: var(--verde-musgo);
-                      font-weight: 600;
-                      text-transform: uppercase;
-                    "
-                  >
-                    <i class="bi bi-camera-video"></i> Entrevista
-                  </span>
-                  <h3
-                    style="
-                      font-size: 1rem;
-                      font-weight: 600;
-                      margin-top: 0.5rem;
-                    "
-                  >
-                    El oficio de tallar: conversamos con un maestro carpintero
-                    de Valparaíso
-                  </h3>
-                  <p style="font-size: 0.85rem; color: var(--gris-texto)">
-                    En esta entrevista en vivo conocimos el taller de don
-                    Patricio, quien lleva más de 30 años trabajando la madera
-                    nativa chilena. Nos mostró su proceso, sus herramientas y su
-                    filosofía de trabajo.
-                  </p>
-                  <footer
-                    style="
-                      font-size: 0.75rem;
-                      color: var(--gris-texto);
-                      margin-top: 1rem;
-                    "
-                  >
-                    <i class="bi bi-calendar3"></i> Marzo 2025
-                  </footer>
-                </div>
-              </section>
-            </article>
-
-            <!-- Noticia 2 -->
-            <article class="col-12 col-md-6 col-lg-4">
-              <section
-                class="card shadow-sm h-100"
-                style="border-radius: 10px; border: 1px solid var(--gris-medio)"
-              >
-                <div class="card-body p-4">
-                  <span
-                    style="
-                      font-size: 0.75rem;
-                      color: var(--madera);
-                      font-weight: 600;
-                      text-transform: uppercase;
-                    "
-                  >
-                    <i class="bi bi-newspaper"></i> Noticia
-                  </span>
-                  <h3
-                    style="
-                      font-size: 1rem;
-                      font-weight: 600;
-                      margin-top: 0.5rem;
-                    "
-                  >
-                    Tocar Madera lanza su mercado en línea colaborativo
-                  </h3>
-                  <p style="font-size: 0.85rem; color: var(--gris-texto)">
-                    Hoy lanzamos nuestra plataforma para conectar artesanos de
-                    todo Chile con personas que valoran el trabajo hecho a mano.
-                    Una iniciativa que nace desde el taller y llega a todo el
-                    país.
-                  </p>
-                  <footer
-                    style="
-                      font-size: 0.75rem;
-                      color: var(--gris-texto);
-                      margin-top: 1rem;
-                    "
-                  >
-                    <i class="bi bi-calendar3"></i> Marzo 2025
-                  </footer>
-                </div>
-              </section>
-            </article>
-
-            <!-- Noticia 3 -->
-            <article class="col-12 col-md-6 col-lg-4">
-              <section
-                class="card shadow-sm h-100"
-                style="border-radius: 10px; border: 1px solid var(--gris-medio)"
-              >
-                <div class="card-body p-4">
-                  <span
-                    style="
-                      font-size: 0.75rem;
-                      color: var(--verde-musgo);
-                      font-weight: 600;
-                      text-transform: uppercase;
-                    "
-                  >
-                    <i class="bi bi-camera-video"></i> Entrevista
-                  </span>
-                  <h3
-                    style="
-                      font-size: 1rem;
-                      font-weight: 600;
-                      margin-top: 0.5rem;
-                    "
-                  >
-                    Madera nativa chilena: ¿qué especies usar y cómo
-                    trabajarlas?
-                  </h3>
-                  <p style="font-size: 0.85rem; color: var(--gris-texto)">
-                    Conversamos con una especialista en maderas nativas del sur
-                    de Chile. Nos habló sobre el lenga, el raulí y el coihue —
-                    sus características, usos y cómo tratarlas para que duren
-                    generaciones.
-                  </p>
-                  <footer
-                    style="
-                      font-size: 0.75rem;
-                      color: var(--gris-texto);
-                      margin-top: 1rem;
-                    "
-                  >
-                    <i class="bi bi-calendar3"></i> Febrero 2025
-                  </footer>
-                </div>
-              </section>
-            </article>
+          <div class="carousel-item">
+            <img src="img/texturaMadera.jpg" class="d-block w-100" alt="Textura de madera" />
+            <div class="carousel-caption">
+              <h2>Madera con historia</h2>
+              <p>Cada pieza es única, cada artesano tiene su sello</p>
+            </div>
           </div>
-          <!-- Se cargan dinámicamente con JS -->
-          <p style="color: var(--gris-texto)">
-            Próximamente — contenido del taller.
-          </p>
+          <div class="carousel-item">
+            <img src="img/trabajoManual.jpg" class="d-block w-100" alt="Trabajo manual" />
+            <div class="carousel-caption">
+              <h2>El valor del trabajo manual</h2>
+              <p>Piezas que duran generaciones</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="img/womenCarpenter.jpg" class="d-block w-100" alt="Artesana" />
+            <div class="carousel-caption">
+              <h2>Artesanas y artesanos de Chile</h2>
+              <p>Desde distintos rincones del país</p>
+            </div>
+          </div>
         </div>
-      </section>
-      <!-- ── Últimos productos ──────────────────────────────────── -->
-      <section class="page-container">
-        <h2 class="section-title"><i class="bi bi-grid"></i> Últimas Obras</h2>
-        <div id="ultimosProductos" class="row g-3">
-          <!-- Se cargan dinámicamente con JS -->
-        </div>
-        <div class="text-center mt-4">
-          <a
-            href="products.html"
-            class="btn btn-lg"
-            style="background-color: var(--verde-musgo); color: white"
-          >
-            <i class="bi bi-grid"></i> Ver todas las obras =>
-          </a>
-        </div>
-      </section>
-    </main>
-    <!-- ── Footer ─────────────────────────────────────────────── -->
-    <div id="footer-container"></div>
 
-    <!-- ── Scripts ─────────────────────────────────────────────── -->
-    <!-- ── Scripts ─────────────────────────────────────────────── -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/config.js"></script>
-    <script src="js/components.js"></script>
-    <script src="js/landing.js"></script>
-    <!-- o el JS de cada página -->
-  </body>
+        <!-- Controles -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carruselHero" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carruselHero" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ── Historias ─────────────────────────────── -->
+    <section class="page-container" style="background-color: var(--blanco); padding: 2rem 1rem">
+      <h2 class="section-title">
+        <i class="bi bi-camera-video"></i> Historias
+      </h2>
+
+      <!-- Cards generadas dinámicamente por historias.js -->
+      <div id="listaHistorias" class="historias-grid">
+        <!-- fallback mientras carga -->
+        <p style="color: var(--gris-texto); font-size: 0.9rem;">Cargando historias...</p>
+      </div>
+
+    </section>
+    </section>
+    <!-- ── Últimos productos ──────────────────────────────────── -->
+    <section class="page-container">
+      <h2 class="section-title"><i class="bi bi-grid"></i> Últimas Obras</h2>
+      <div id="ultimosProductos" class="row g-3">
+        <!-- Se cargan dinámicamente con JS -->
+      </div>
+      <div class="text-center mt-4">
+        <a href="products.html" class="btn btn-lg" style="background-color: var(--verde-musgo); color: white">
+          <i class="bi bi-grid"></i> Ver todas las obras =>
+        </a>
+      </div>
+    </section>
+  </main>
+  <!-- ── Footer ─────────────────────────────────────────────── -->
+  <div id="footer-container"></div>
+
+  <!-- ── Scripts ─────────────────────────────────────────────── -->
+  <!-- ── Scripts ─────────────────────────────────────────────── -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/landing.js"></script>
+  <script src="js/historias-data.js"></script>
+  <script src="js/historias.js"></script>
+  <!-- o el JS de cada página -->
+</body>
+
 </html>
