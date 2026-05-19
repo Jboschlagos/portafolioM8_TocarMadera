@@ -257,3 +257,352 @@ footer a:hover {
 .mapa-wrapper {
   position: relative;
 }
+
+/* ════════════════════════════════════════════════════════════════
+   entrevistas.css — Estilos para entrevistas
+   Tocar Madera | hereda variables de style.css
+   ════════════════════════════════════════════════════════════════ */
+
+/* ── GRID DE ENTREVISTAS (Landing - 3 cards) ───────────────────── */
+
+.entrevistas-grid-landing {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* ── CARD DE ENTREVISTA (Landing) ───────────────────────────────── */
+
+.entrevista-card-landing {
+  background-color: var(--blanco);
+  border: 1px solid var(--gris-medio);
+  border-radius: 10px;
+  overflow: hidden;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.entrevista-card-landing:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Imagen */
+.entrevista-card-landing__imagen {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  height: 180px;
+}
+
+.entrevista-card-landing__imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.entrevista-card-landing:hover .entrevista-card-landing__imagen img {
+  transform: scale(1.05);
+}
+
+/* Badge */
+.entrevista-card-landing__badge {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background-color: var(--madera);
+  color: var(--blanco);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.4rem 0.7rem;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+/* Body */
+.entrevista-card-landing__body {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.entrevista-card-landing__oficio {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--verde-musgo);
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.entrevista-card-landing__nombre {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--negro-suave);
+  margin-bottom: 0.5rem;
+}
+
+.entrevista-card-landing__titulo {
+  font-size: 0.9rem;
+  color: var(--gris-texto);
+  line-height: 1.4;
+  flex: 1;
+  margin-bottom: 0.75rem;
+}
+
+.entrevista-card-landing__footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--gris-texto);
+  border-top: 1px solid var(--gris-medio);
+  padding-top: 0.75rem;
+  margin-top: auto;
+}
+
+/* ── EMBED YOUTUBE ──────────────────────────────────────────────── */
+
+.embed-youtube {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+  background: var(--gris-claro);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.embed-youtube iframe {
+  border-radius: 8px;
+}
+
+/* ── GRID DE ENTREVISTAS (Página completa) ────────────────────── */
+
+.entrevistas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* ── CARD DE ENTREVISTA (Página completa) ──────────────────────── */
+
+.entrevista-card {
+  background-color: var(--blanco);
+  border: 1px solid var(--gris-medio);
+  border-radius: 10px;
+  overflow: hidden;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.entrevista-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Imagen */
+.entrevista-card__imagen {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  height: 180px;
+}
+
+.entrevista-card__imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.entrevista-card:hover .entrevista-card__imagen img {
+  transform: scale(1.05);
+}
+
+/* Badge */
+.entrevista-card__badge {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background-color: var(--madera);
+  color: var(--blanco);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.4rem 0.7rem;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+/* Body */
+.entrevista-card__body {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.entrevista-card__oficio {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--verde-musgo);
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.entrevista-card__nombre {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--negro-suave);
+  margin-bottom: 0.5rem;
+}
+
+.entrevista-card__titulo {
+  font-size: 0.9rem;
+  color: var(--gris-texto);
+  line-height: 1.4;
+  flex: 1;
+  margin-bottom: 0.75rem;
+}
+
+.entrevista-card__footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--gris-texto);
+  border-top: 1px solid var(--gris-medio);
+  padding-top: 0.75rem;
+  margin-top: auto;
+}
+
+/* ── FILTROS ──────────────────────────────────────────────────── */
+
+.entrevistas-filtros {
+  background-color: var(--gris-claro);
+  padding: 1.5rem;
+  border-radius: 10px;
+  border: 1px solid var(--gris-medio);
+  margin-bottom: 2rem;
+}
+
+.entrevistas-filtros .form-label {
+  font-weight: 600;
+  color: var(--negro-suave);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.entrevistas-filtros .form-control {
+  border: 1px solid var(--gris-medio);
+  border-radius: 6px;
+  padding: 0.6rem 0.8rem;
+  font-size: 0.9rem;
+  background-color: var(--blanco);
+}
+
+.entrevistas-filtros .form-control:focus {
+  border-color: var(--verde-musgo);
+  box-shadow: 0 0 0 3px rgba(74, 124, 89, 0.1);
+}
+
+.entrevistas-filtros .btn {
+  border-radius: 6px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.entrevistas-filtros .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* ── PAGINACIÓN ───────────────────────────────────────────────── */
+
+.pagination {
+  gap: 0.25rem;
+}
+
+.pagination .page-link {
+  color: var(--verde-musgo);
+  border-color: var(--gris-medio);
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.pagination .page-link:hover {
+  background-color: var(--verde-musgo);
+  color: var(--blanco);
+  border-color: var(--verde-musgo);
+}
+
+.pagination .page-item.active .page-link {
+  background-color: var(--verde-musgo);
+  border-color: var(--verde-musgo);
+  color: var(--blanco);
+}
+
+.pagination .page-item.disabled .page-link {
+  color: var(--gris-medio);
+  pointer-events: none;
+}
+
+/* ── RESPONSIVE ───────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .entrevistas-grid,
+  .entrevistas-grid-landing {
+    grid-template-columns: 1fr;
+  }
+
+  .entrevistas-filtros {
+    padding: 1rem;
+  }
+
+  .entrevista-card__nombre,
+  .entrevista-card-landing__nombre {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .entrevistas-filtros .row {
+    gap: 0.75rem;
+  }
+
+  .entrevista-card__body,
+  .entrevista-card-landing__body {
+    padding: 1rem;
+  }
+
+  .pagination {
+    flex-wrap: wrap;
+  }
+}
