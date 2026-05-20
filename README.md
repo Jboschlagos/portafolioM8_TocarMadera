@@ -6,10 +6,10 @@ Plataforma de e-commerce artesanal chilena construida como proyecto de portafoli
 
 ## 🌐 Demo en producción
 
-| Servicio    | URL                                                     |
-| ----------- | ------------------------------------------------------- |
-| Frontend    | https://portafolio-m8-tocar-madera-5ve26h91o.vercel.app |
-| Backend API | https://tocar-madera-backend.onrender.com               |
+| Servicio    | URL                                       |
+| ----------- | ----------------------------------------- |
+| Frontend    | https://tocar-madera.vercel.app/          |
+| Backend API | https://tocar-madera-backend.onrender.com |
 
 ---
 
