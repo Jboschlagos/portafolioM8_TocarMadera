@@ -2,6 +2,25 @@
 let entrevistasActuales = [];
 let paginaActual = 1;
 const ENTREVISTAS_POR_PAGINA = 6;
+let mapa = null;
+
+// ── Inicializar mapa centrado en Chile ─────────────────────────
+function inicializarMapa() {
+  mapa = L.map("mapa").setView([-35.6751, -71.543], 5);
+
+  // Capa minimalista CartoDB
+  L.tileLayer(
+    "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+    {
+      attribution: "© OpenStreetMap © CartoDB",
+    },
+  ).addTo(mapa);
+}
+
+// ── Encuadrar Chile ────────────────────────────────────────────
+function encuadrarChile() {
+  mapa.setView([-35.6751, -71.543], 5);
+}
 
 // ── Cargar entrevistas con filtros ─────────────────────────────
 async function cargarEntrevistas(pagina = 1) {
@@ -28,12 +47,39 @@ async function cargarEntrevistas(pagina = 1) {
     // 3. Renderizar
     renderEntrevistas(data.entrevistas);
     renderPaginacion(data.total, pagina);
+    actualizarMapa(data.entrevistas);
     paginaActual = pagina;
   } catch (error) {
     console.error("Error cargando entrevistas:", error);
     document.getElementById("listaEntrevistas").innerHTML =
       `<p style="color: var(--gris-texto); grid-column: 1/-1;">Error cargando entrevistas.</p>`;
   }
+}
+
+// ── Actualizar mapa con pins de entrevistas ────────────────────
+function actualizarMapa(entrevistas) {
+  // Limpiar pins anteriores
+  if (mapa) {
+    mapa.eachLayer((layer) => {
+      if (layer instanceof L.Marker) {
+        mapa.removeLayer(layer);
+      }
+    });
+  }
+
+  // Agregar nuevos pins
+  entrevistas.forEach((e) => {
+    if (e.lat && e.lng) {
+      L.marker([e.lat, e.lng]).addTo(mapa).bindPopup(`
+                    <strong>${e.artesano}</strong><br>
+                    ${e.oficio}<br>
+                    ${e.ciudad}, ${e.region}<br>
+                    <small style="color: var(--verde-musgo); cursor: pointer;" onclick="abrirModalEntrevista(${e.id})">
+                        Ver entrevista →
+                    </small>
+                `);
+    }
+  });
 }
 
 // ── Renderizar cards de entrevistas ────────────────────────────
@@ -210,6 +256,7 @@ async function abrirModalEntrevista(id) {
 
 // ── Event listeners ────────────────────────────────────────────
 document.addEventListener("DOMContentLoaded", () => {
+  inicializarMapa();
   cargarEntrevistas(1);
 
   document.getElementById("btnFiltrar").addEventListener("click", () => {
